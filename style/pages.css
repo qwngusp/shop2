@@ -273,7 +273,7 @@
 .product-row__original { font-size: 11px; color: var(--text-muted); text-decoration: line-through; }
 .product-row__per-unit { font-size: 11px; }
 .product-row__shipping {
-  font-size: 11px;
+  font-size: 12px;
   /* color: var(--text-secondary); */
 }
 .product-row__shipping strong {
@@ -375,7 +375,7 @@
   font-weight: 600;
   color: var(--text-primary);
   flex-shrink: 0;
-  width: 32px;
+  width: 58px;
 }
 
 .detail-delivery-info {
@@ -742,11 +742,24 @@
   margin-bottom: 4px;
 }
 
+.detail-name-row {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
 .detail-name {
   font-size: 17px;
   font-weight: 700;
   line-height: 1.4;
-  margin-bottom: 10px;
+}
+
+.detail-per-unit {
+  font-size: 12px;
+  /* color: var(--text-muted); */
+  white-space: nowrap;
+  padding-bottom: 3px;
 }
 
 .detail-rating-row {
@@ -759,7 +772,7 @@
 
 .detail-rating-row .stars { font-size: 13px; }
 
-.detail-review-count { color: var(--text-muted); }
+.detail-review-count {  }
 
 .detail-price-wrap { margin-bottom: 8px; }
 
@@ -792,11 +805,6 @@
   display: flex;
   align-items: center;
   gap: var(--space-sm);
-}
-
-.detail-per-unit {
-  font-size: 12px;
-  color: var(--text-muted);
 }
 
 .detail-coupon-row {
