@@ -19,8 +19,8 @@ const DetailPage = (() => {
   };
   const isCouponApplied = (productId) => !!getAppliedMap()[productId];
 
-  // 상품의 기준 가격 (discountedPrice 사용)
-  const getBasePrice = () => currentProduct.discountedPrice;
+  // 상품의 기준 가격 (originalPrice 사용)
+  const getBasePrice = () => currentProduct.originalPrice;
 
   const getCurrentPrice = () =>
     isCouponApplied(currentProduct.id)
@@ -135,7 +135,7 @@ const DetailPage = (() => {
       const discounted = Math.floor(basePrice * (1 - COUPON_RATE));
       return `
         <div class="detail-price-row">
-          <span class="detail-discount-rate">${currentProduct.discountRate + COUPON_RATE * 100}%</span>
+          <span class="detail-discount-rate">${COUPON_RATE * 100}%</span>
           <span class="detail-price">${discounted.toLocaleString()}원</span>
         </div>
         <div style="display:flex;align-items:center;gap:8px;margin-top:2px;">
@@ -146,11 +146,7 @@ const DetailPage = (() => {
     }
     return `
       <div class="detail-price-row">
-        <span class="detail-discount-rate">${currentProduct.discountRate}%</span>
         <span class="detail-price">${basePrice.toLocaleString()}원</span>
-      </div>
-      <div style="margin-top:2px;">
-        <span class="detail-original-price">${currentProduct.originalPrice.toLocaleString()}원</span>
       </div>
     `;
   };
